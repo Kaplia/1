@@ -1,22 +1,27 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
     <title>Front-End-Test</title>
 </head>
 <body>
     <div class="container">
-        <div class="box-1">
+    	<input id="menu__toggle" type="checkbox"/>
+        <label class="menu__btn" for="menu__toggle">
+            <span></span>
+        </label>
+        <div class="box-1 menu_box">     	
             <div id="header-1">
                 <img src="img/menu-logo.png" alt="">
                 <p>PROJECTUS</p>
-                <i class="fas fa-search"></i>
             </div>
             <div id="user">
-            	<button class="button"><i class="fas fa-ellipsis-h fa-lg"></i></button>
-            	<img src="img/user.jpg" alt="">
+            	<img class="user-avatar" src="img/user-1.jpg" alt="">
             	<div class="user-name">
             	    <h5>Jean Gonzales</h5>
             	    <h6>Product Owner</h6>
@@ -24,11 +29,11 @@
             </div>
             <div id="tasks">
             	<div class="rightcol">
-            		<h3>11</h3>
+            		<h3 class="open-tasks">2</h3>
             		<h6>Open Tasks</h6>
             	</div>
             	<div class="leftcol">
-            		<h3>372</h3>
+            		<h3 class="completed-tasks" onclick="completeTask()">237</h3>
             		<h6>Completed Tasks</h6>
             	</div>
             </div>
@@ -37,7 +42,8 @@
                 <ul class="v-menu">
                     <li><a href="">Home</a></li>
                     <li><a href="">My Tasks</a></li>
-                    <li><a href="">Notifications</a></li>
+                    <li><a href="">Notifications<p class="notifications">3</p></a></li>
+
                 </ul>
             </div>
         </div>
@@ -47,14 +53,13 @@
             <div id="header-2">
             	<div class="logo">
             		<div class="contacts">
-                	    <img src="img/user.jpg" alt="">
-                	    <img src="img/user.jpg" alt="">
-                	    <img src="img/user.jpg" alt="">
+                	    <img src="img/user-1.jpg" alt="">
+                	    <img src="img/user-1.jpg" alt="">
+                	    <img src="img/user-1.jpg" alt="">
                 	    <button class="share">Share</button>
                 	    <button class="chat"><i class="fas fa-comments"></i>Chat</button>
                     </div>
             		<div class="name-logo">
-                	    <button class="button"><i class="fas fa-ellipsis-h fa-lg"></i></button>
                 	    <img src="img/image-logo.png" alt="">
                         <p>Website Redesign</p>
                     </div>
@@ -73,7 +78,7 @@
             <div id="container">
             	<div class="content">
             		<div class="day">TODAY</div>
-            	    <div class="notifications">
+            	    <div class="activity-tasks">
                         <div class="box box-1">
                     	    <h1>Darika Samak mark as done Listing on 
                     	    Product Hunt so that we can reach as 
@@ -83,7 +88,7 @@
                     	    <p>8:40 PM</p>
                         </div>  
                     </div>
-                    <div class="notifications">
+                    <div class="activity-tasks">
                         <div class="box box-1">
                     	    <h2>Emilee Simchenko commented on Account for 
                     	    teams and personal in bottom style</h2>
@@ -93,13 +98,13 @@
                         </div>  
                     </div>
 
-                    <div class="qwe">
+                    <div class="task">
                     	<p>During a project build, it is necessary to 
                     	evaluate the product design and development 
                         against project requirements and outcomes</p>
                     </div>
 
-                    <div class="notifications">
+                    <div class="activity-tasks">
                         <div class="box box-1">
                     	    <h3>Darika Samak uploaded 4 files on 
                     	    An option to search in current projects 
@@ -110,10 +115,10 @@
                         </div>  
                     </div>
                     <p class="image">
-                        <img src="img/image-1.jpg" alt="Фотография 1" width="100" height="100">
-                        <img src="img/image-2.jpg" alt="Фотография 2" width="100" height="100">
-                        <img src="img/image-3.jpg" alt="Фотография 3" width="100" height="100">
-                        <img src="img/image-4.jpg" alt="Фотография 4" width="100" height="100">
+                        <img src="img/image-1.jpg" alt="Фотография 1" width="100" height="100" onclick="imageClick(0)">
+                        <img src="img/image-2.jpg" alt="Фотография 2" width="100" height="100" onclick="imageClick(1)">
+                        <img src="img/image-3.jpg" alt="Фотография 3" width="100" height="100" onclick="imageClick(2)">
+                        <img src="img/image-4.jpg" alt="Фотография 4" width="100" height="100" onclick="imageClick(3)">
                     </p>
 
             	</div>
@@ -123,5 +128,7 @@
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
